@@ -12,8 +12,8 @@ public class Swaglab_with_reusable_methods extends Baseclass1 {
 	public static void login() {
 		WebElement username = driver.findElement(By.xpath("//input[@type='text']"));
 		toPassValue(username, "standard_user");
-		WebElement "pass = driver.findElement(By.xpath("//input[@type='password']"));
-		toPassValue(pass, "secret_sauce");
+		//WebElement "pass = driver.findElement(By.xpath("//input[@type='password']"));
+		//toPassValue(pass, "secret_sauce");
 	}
 	public static void dropd() {
 		WebElement drop = driver.findElement(By.xpath("//input[@type='submit']"));

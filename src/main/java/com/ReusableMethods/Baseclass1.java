@@ -57,7 +57,7 @@ public class Baseclass1 {
 	
 	public static void scrollby(int x, int y) {
 		JavascriptExecutor js =  (JavascriptExecutor) driver;
-		js.executeScript(Window.scro);
+		//js.executeScript(Window.scro);
 	}
 
 	public static void selectValueFromDropDrown(WebElement element, String option, String value) {

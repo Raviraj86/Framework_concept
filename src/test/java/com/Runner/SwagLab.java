@@ -12,37 +12,38 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 
+import com.POM.LoginPage;
 import com.ReusableMethods.BaseClass;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SwagLab extends BaseClass {
 	
+    public static WebDriver driver  = browserLaunch("chrome");
+    public static LoginPage lp = new LoginPage(driver);
+	
+    
+    
 	
 	public static void main(String[] args) throws IOException {
 
-
-		browserLaunch("chrome");
-		
 		getUrl("https://www.saucedemo.com/");
 		
+		toPassValue(lp.getUsername(), "standard_user");
 		
-		WebElement username = driver.findElement(By.xpath("//input[@type='text']"));
-		toPassValue(username, "standard_user");
+		toPassValue(lp.getPass(), "secret_sauce");
 		
-		
-		WebElement pass = driver.findElement(By.xpath("//input[@type='password']"));
-		toPassValue(pass, "secret_sauce");
+		toClickAElement(lp.getButton());
 		
 		
-		WebElement button = driver.findElement(By.xpath("//input[@type='submit']"));
-		toClickAElement(button);
 		
 		
-		WebElement drop = driver.findElement(By.xpath("//select[@class='product_sort_container']"));
-		
-		selectValueFromDropDrown(drop, "index", "2");
-		
+		/*
+		 * WebElement drop =
+		 * driver.findElement(By.xpath("//select[@class='product_sort_container']"));
+		 * 
+		 * selectValueFromDropDrown(drop, "index", "2");
+		 */
 		
 		/*
 		 * 
